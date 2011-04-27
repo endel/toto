@@ -39,6 +39,7 @@ Gem::Specification.new do |s|
      "test/templates/index.builder",
      "test/templates/index.rhtml",
      "test/templates/layout.rhtml",
+     "test/templates/tagged.rhtml",
      "test/templates/repo.rhtml",
      "test/test_helper.rb",
      "test/toto_test.rb",
