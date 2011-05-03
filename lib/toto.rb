@@ -97,7 +97,7 @@ module Toto
       articles = self.articles.collect do |article|
         Article.new article, @config
       end.select do |article|
-        !article[:tags].index(tag.humanize).nil?
+        !article[:tags].index(tag.humanize.downcase).nil?
       end
       
       {:articles => articles, :tag => tag}
@@ -251,7 +251,7 @@ module Toto
       
       self.taint
       self.update data
-      self[:tags] = self[:tags].split(',').collect{|tag| tag.strip.humanize }
+      self[:tags] = self[:tags].split(',').collect{|tag| tag.strip.humanize.downcase }
       self[:date] = Date.parse(self[:date].gsub('/', '-')) rescue Date.today
       self
     end
