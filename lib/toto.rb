@@ -288,7 +288,7 @@ module Toto
       "/#{@config[:prefix]}#{self[:date].strftime("/%Y/%m/%d/#{slug}/")}".squeeze('/')
     end
     
-    def tags
+    def tag_links
       self[:tags].collect {|tag| "<a href=\"/tagged/#{tag.slugize}\">#{tag}</a>" }.join(@config[:tag_separator])
     end
 
